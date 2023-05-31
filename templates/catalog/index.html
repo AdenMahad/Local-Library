@@ -1,0 +1,24 @@
+{% extends "baseLayout.html" %}
+{% block content %}
+<h1 style="padding-top: 20px"> Local Library </h1>
+<div style="padding-top: 35px; padding-left: 100px">
+
+<p>Welcome to local library, library for everyone</p>
+<h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instance_availablity }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <p>
+      you have visited this page {{num_visits}} time {{num_visits|pluralize}}
+    </p>
+  </ul>
+  
+    <div  style="position:relative: right: -700px; top: -400px;">
+      <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    </div>
+</div>
+
+{% endblock  %}
